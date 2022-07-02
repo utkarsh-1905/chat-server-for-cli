@@ -123,4 +123,4 @@ try {
 } catch (err) {
   console.log(err);
 }
-httpServer.listen(3000);
+httpServer.listen(process.env.PORT || 3000);
