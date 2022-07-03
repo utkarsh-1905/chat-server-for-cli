@@ -8,6 +8,9 @@ const morgan = require("morgan");
 const app = express();
 app.use(cors());
 app.use(morgan("dev"));
+app.get("/ping", (req, res) => {
+  res.status(200).json({ res: "pong" });
+});
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
